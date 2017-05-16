@@ -1,0 +1,89 @@
+group 'pentaho'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'idea'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'pentaho.Pentaho'
+    }
+}
+
+repositories {
+//    maven { url 'http://repository.pentaho.org/artifactory/repo/' }
+//    maven { url 'https://maven.atlassian.com/3rdparty/' }
+    maven { url 'http://repo.pentaho.org/artifactory/repo/' }
+
+    mavenCentral()
+    mavenLocal()
+}
+
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.pentaho.pentaho-commons/pentaho-package-manager
+//    compile group: 'org.pentaho.pentaho-commons', name: 'pentaho-package-manager', version: '1.0.11'
+////
+////    // https://mvnrepository.com/artifact/org.pentaho/pentaho-aggdesigner-algorithm
+////    compile group: 'org.pentaho', name: 'pentaho-aggdesigner-algorithm', version: '5.1.5-jhyde'
+////
+////    // https://mvnrepository.com/artifact/com.pentaho.kettle/pdi-ce
+//    compile group: 'com.pentaho.kettle', name: 'pdi-ce', version: '5.3.0-stable'
+////
+////    // https://mvnrepository.com/artifact/org.eobjects.datacleaner/DataCleaner-core
+//    compile group: 'org.eobjects.datacleaner', name: 'DataCleaner-core', version: '3.7.4'
+//
+//    compile 'pentaho-reporting-engine:pentaho-reporting-engine-classic-samples:7.0.0.4-66'
+
+
+    //For pentaho log
+    // https://mvnrepository.com/artifact/commons-logging/commons-logging
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+
+    //For com.lowagie.text.pdf.FontMapper
+    // https://mvnrepository.com/artifact/com.lowagie/itext
+    compile group: 'com.lowagie', name: 'itext', version: '4.2.1'
+
+//    // https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+//    compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.11'
+
+//    jdbc:hsqldb:./sql/sampledata
+    // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
+
+
+
+
+    // https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io
+    compile group: 'org.apache.directory.studio', name: 'org.apache.commons.io', version: '2.4'
+
+//    Caused by: org.pentaho.reporting.libraries.xmlns.parser.ParseException: Failure while loading data: layout.xml [Location: Line=5 Column=11]
+    compile 'pentaho-reporting-engine:pentaho-reporting-engine-wizard-core:7.0.0.6-91'
+
+    // https://mvnrepository.com/artifact/postgresql/postgresql
+    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+
+
+
+    compile 'pentaho-reporting-engine:pentaho-reporting-engine-classic-core:5.0.1-stable'
+    compile 'pentaho-reporting-engine:pentaho-reporting-engine-classic-extensions:5.0.1-stable'
+    compile 'pentaho-reporting-engine:pentaho-reporting-engine-classic-extensions-xpath:5.0.1-stable'
+    compile 'pentaho-library:libloader:5.0.1-stable'
+    compile 'pentaho-library:libxml:5.0.1-stable'
+    compile 'pentaho-library:libserializer:5.0.1-stable'
+    compile 'pentaho-library:libformula:5.0.1-stable'
+    compile 'pentaho-library:libfonts:5.0.1-stable'
+    compile 'pentaho-library:libformat:5.0.1-stable'
+    compile 'pentaho-library:libdocbundle:5.0.1-stable'
+    compile 'pentaho-library:libswing:5.0.1-stable'
+    compile 'pentaho-library:flute:5.0.1-stable'
+    compile 'pentaho-library:libcss:5.0.1-stable'
+    compile 'pentaho-library:libpixie:5.0.1-stable'
+    compile 'pentaho-library:libsparkline:5.0.1-stable'
+    compile(group: 'pentaho-library', name: 'libbase', version: '5.0.1-stable')
+    compile(group: 'pentaho-library', name: 'librepository', version: '5.0.1-stable')
+}
